@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Harga Saham Bulanan</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center; /* Mengatur teks dan elemen di tengah halaman */
+        }
+        .form-container {
+            max-width: 450px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            text-align: left; /* Mengatur teks dan elemen di kiri dalam form */
+        }
+        .form-container h1 {
+            margin-bottom: 20px;
+        }
+        .form-container form {
+            padding: 10px 0;
+        }
+        .form-container form input, 
+        .form-container form select, 
+        .form-container form button {
+            width: calc(100% - 22px); /* Mengurangi lebar untuk mengakomodasi border */
+            padding: 10px;
+            margin: 5px 0;
+            display: block; /* Membuat input, select, dan button tampil sebagai blok */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container form button {
+            background-color: #a8aba8;
+            color: rgb(6, 6, 6);
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Daftar Harga Saham Bulanan</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Simpan</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

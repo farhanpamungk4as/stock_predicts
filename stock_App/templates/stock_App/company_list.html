@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Harga Saham Bulanan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #848684;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #808080;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Harga Saham Bulanan untuk {{ company.company }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Bulan</th>
+                <th>Harga Tertinggi</th>
+                <th>Harga Terendah</th>
+                <th>Harga Awal</th>
+                <th>Harga Akhir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for price in monthly_prices %}
+            <tr>
+                <td>{{ price.month }}</td>
+                <td>{{ price.highest_price }}</td>
+                <td>{{ price.lowest_price }}</td>
+                <td>{{ price.open_price }}</td>
+                <td>{{ price.close_price }}</td>
+
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'add_monthly_stock_price' %}" class="button">Tambah Harga Saham</a>
+    
+    <!-- Example of a link to predict_view -->
+    <div class="container">
+        <h2 class="text-center">Stock Price Predictions</h2> 
+        <div class="btn-group">
+            <a href="{% url 'predict_view' company_id=company_id days_ahead=6 %}" class="btn btn-primary">Predict Stock Prices For the Next 6 Months</a>
+            <a href="{% url 'predict_view' company_id=company_id days_ahead=12 %}" class="btn btn-secondary">Predict Stock Prices For the Next 12 Months</a>
+            <a href="{% url 'predict_view' company_id=company_id days_ahead=24 %}" class="btn btn-success">Predict Stock Prices For the Next 24 Months</a>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>
+

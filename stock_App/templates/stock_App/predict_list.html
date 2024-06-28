@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict List</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .company-links {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .company-links h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .company-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #696969;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .company-links a:hover {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="company-links">
+            <h2>Predict List</h2>
+            <a href="{% url 'company_list' 12 %}" class="btn btn-primary">BRI</a>
+            <a href="{% url 'company_list' 13 %}" class="btn btn-primary">Mandiri</a>
+            <a href="{% url 'company_list' 14 %}"class="btn btn-primary">BTPN</a>
+            <a href="{% url 'company_list' 15 %}" class="btn btn-primary">Permata</a>
+            <a href="{% url 'company_list' 16 %}"class="btn btn-primary">Indofood</a>
+            <a href="{% url 'company_list' 17 %}" class="btn btn-primary">Bank Jago</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
