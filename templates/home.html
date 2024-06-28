@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Predictions</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <style>
+        body {
+            padding-top: 60px;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .container {
+            margin-top: 30px;
+    
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">StockPredict</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'add_monthly_stock_price' %}">Daftar Harga Saham</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'predict_list' %}">Predict Harga Saham</a> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Stock Price Predictions</h1>
+            <p class="lead">Selamat datang di aplikasi prediksi harga saham. Gunakan aplikasi ini untuk memprediksi harga saham berdasarkan data historis.</p>
+            <hr class="my-4">
+            <p>Anda dapat menambahkan data harga saham bulanan untuk memprediksi dengan mengklik tombol di bawah ini.</p>
+            <a class="btn btn-primary btn-lg" href="{% url 'add_monthly_stock_price' %}" role="button">Tambahkan Harga Saham</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>
